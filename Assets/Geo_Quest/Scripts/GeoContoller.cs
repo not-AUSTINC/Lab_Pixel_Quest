@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GeoContoller : MonoBehaviour {
-    public int variable1 = 2;
+    public int speed = 2;
 
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
@@ -18,8 +18,7 @@ public class GeoContoller : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         float xInput = Input.GetAxis("Horizontal");
-        xInput *= variable1;
-        rb2d.velocity = new Vector2(xInput, rb2d.velocity.y);
+        rb2d.velocity = new Vector2(xInput * speed, rb2d.velocity.y);
     }
 
     public string nextLevel = "Level2";
