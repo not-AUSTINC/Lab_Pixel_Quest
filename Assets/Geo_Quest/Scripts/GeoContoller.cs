@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GeoContoller : MonoBehaviour {
-    public int speed = 2;
+    public int speed = 5;
 
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
