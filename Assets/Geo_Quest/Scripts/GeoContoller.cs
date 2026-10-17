@@ -39,3 +39,17 @@ public class GeoContoller : MonoBehaviour {
     }
     }
 }
+public class ChangeColor : MonoBehaviour
+{
+    private SpriteRenderer sr;
+
+    void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
+        sr.color = Color.red; // Example: change sprite color
+    }
+}
