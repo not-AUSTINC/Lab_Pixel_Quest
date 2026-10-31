@@ -8,8 +8,11 @@ public class GeoContoller : MonoBehaviour {
 
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
+    private SpriteRenderer _spriteRenderer;
     void Start() {
         rb2d = GetComponent<Rigidbody2D>(); 
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+ 
         //Debug.Log(Var2 + "World");
         //Var2 = "Goodbye";
         //Debug.Log(Var2 + "World");
@@ -19,6 +22,9 @@ public class GeoContoller : MonoBehaviour {
     void Update() {
         float xInput = Input.GetAxis("Horizontal");
         rb2d.velocity = new Vector2(xInput * speed, rb2d.velocity.y);
+
+        if (xInput > 0) { _spriteRenderer.flipX = true; }
+        else if (xInput < 0) { _spriteRenderer.flipX = false;}
     }
 
     public string nextLevel = "Level2";
